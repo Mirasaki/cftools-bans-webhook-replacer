@@ -1,0 +1,32 @@
+{
+  "name": "cftools-bans-webhook-replacer",
+  "version": "1.0.0",
+  "description": "This is a NodeJS application that parses data from the free CFTools webhook and replaced it with a custom embed message.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mirasaki/cftools-bans-webhook-replacer.git"
+  },
+  "keywords": [
+    "dayz",
+    "discord",
+    "cftools",
+    "webhook",
+    "custom"
+  ],
+  "author": "Richard Hillebrand (Mirasaki)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Mirasaki/cftools-bans-webhook-replacer/issues"
+  },
+  "homepage": "https://github.com/Mirasaki/cftools-bans-webhook-replacer#readme",
+  "dependencies": {
+    "discord.js": "^14.7.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
