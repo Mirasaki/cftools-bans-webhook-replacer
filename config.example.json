@@ -1,0 +1,52 @@
+{
+  "DISCORD_CLIENT_ID": "",
+  "DISCORD_BOT_TOKEN": "",
+
+  "CFTOOLS_API_APPLICATION_ID": "",
+  "CFTOOLS_API_SECRET": "",
+  "CFTOOLS_SERVERS": [
+    ""
+  ],
+
+  "CFTOOLS_WEBHOOK_CHANNEL_ID": "",
+  "CFTOOLS_WEBHOOK_USER_ID": "",
+  "CFTOOLS_DELETE_ORIGINAL_MESSAGE": true,
+
+
+
+
+
+  "DISCORD_EMBED_COLOR": "#FFFFFF",
+  "DISCORD_EMBED_TITLE": "Player Banned",
+  "_DISCORD_EMBED_ICON_URL": "",
+
+  "UNRESOLVED_PLAYER_NAME": "Survivor",
+  "DEFAULT_BAN_REASON": "Not provided",
+
+  "_USE_CUSTOM_EMBED_STRUCTURE": true,
+  "_CUSTOM_EMBED_STRUCTURE": {
+    "color": 12526,
+    "author": {
+      "name": "Player Banned",
+      "iconURL": "https://example.com/image.png"
+    },
+    "description": "{{ign}} | {{cftoolsProfileLink}} | {{profileHyperLink}} | {{banListHyperLink}} | {{banListIdentifier}} | {{banListURL}} | {{reason}}",
+    "fields": [
+      {
+        "name": "Profile",
+        "value": "{{profileHyperLink}}",
+        "inline": true
+      },
+      {
+        "name": "Ban Manager",
+        "value": "{{banListHyperLink}}"
+      },
+      {
+        "name": "Reason",
+        "value": "```\n{{reason}}\n```"
+      }
+    ]
+  },
+
+  "_CFTOOLS_WEBHOOK_REGEX_MATCH": "/(got banned on)|:/"
+}
