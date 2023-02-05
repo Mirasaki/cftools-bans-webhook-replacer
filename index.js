@@ -97,27 +97,27 @@ const main = async () => {
     const banEmbed = _USE_CUSTOM_EMBED_STRUCTURE
       ? replaceStringTags( _CUSTOM_EMBED_STRUCTURE, availableTags)
       : {
-      color,
-      author: {
-        name: DISCORD_EMBED_TITLE,
-        iconURL: _DISCORD_EMBED_ICON_URL ? _DISCORD_EMBED_ICON_URL : null
-      },
-      fields: [
-        {
-          name: 'Profile',
-          value: profileHyperLink,
-          inline: true
-        },
-        {
-          name: 'Ban Manager',
-          value: banListIdentifier
-        },
-        {
-          name: 'Reason',
-          value: `\`\`\`\n${reason}\n\`\`\``
+          color,
+          author: {
+            name: DISCORD_EMBED_TITLE,
+            iconURL: _DISCORD_EMBED_ICON_URL ? _DISCORD_EMBED_ICON_URL : null
+          },
+          fields: [
+            {
+              name: 'Profile',
+              value: profileHyperLink,
+              inline: true
+            },
+            {
+              name: 'Ban Manager',
+              value: banListIdentifier
+            },
+            {
+              name: 'Reason',
+              value: `\`\`\`\n${reason}\n\`\`\``
+            }
+          ]
         }
-      ]
-    }
 
     // Wait for our message delivery
     await channel
