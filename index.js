@@ -14,7 +14,6 @@ if (!existsSync('./config.json')) {
 const config = require('./config.json');
 const {
   DISCORD_BOT_TOKEN,
-  DISCORD_CLIENT_ID,
   CFTOOLS_WEBHOOK_CHANNEL_ID,
   CFTOOLS_WEBHOOK_USER_ID,
   CFTOOLS_DELETE_ORIGINAL_MESSAGE,
@@ -50,12 +49,12 @@ const main = async () => {
   // Register message listener
   client.on(Events.MessageCreate, async (msg) => {
     // Assignments
-    const { channel, member, user, content } = msg;
+    const { channel, webhookId, content } = msg;
 
     // Validate target ids/is ban message
     if (
       channel?.id !== CFTOOLS_WEBHOOK_CHANNEL_ID
-      || member?.id !== CFTOOLS_WEBHOOK_USER_ID
+      || webhookId !== CFTOOLS_WEBHOOK_USER_ID
     ) return;
 
     // Conditionally customizable regex
@@ -78,8 +77,6 @@ const main = async () => {
     const ign = await tryPlayerName(cftoolsId);
     const cftoolsProfileLink = `https://app.cftools.cloud/profile/${cftoolsId}`;
     const profileHyperLink = `[${ ign }](${ cftoolsProfileLink })`;
-    const banListURL = `https://app.cftools.cloud/ban-manager/${banListIdentifier}`;
-    const banListHyperLink = `[**\`${banListIdentifier}\`**](${banListURL})`;
     const reason = banReason || DEFAULT_BAN_REASON;
 
     // Resolve HEX color integer
@@ -92,9 +89,7 @@ const main = async () => {
       ign,
       cftoolsProfileLink,
       profileHyperLink,
-      banListHyperLink,
       banListIdentifier,
-      banListURL,
       reason
     }
 
@@ -115,7 +110,7 @@ const main = async () => {
         },
         {
           name: 'Ban Manager',
-          value: banListHyperLink
+          value: banListIdentifier
         },
         {
           name: 'Reason',
@@ -172,7 +167,6 @@ const validateConfig = () => {
   // Loop over our expected config key-value pairs to validate them
   for (const [ key, value ] of Object.entries({
     DISCORD_BOT_TOKEN,
-    DISCORD_CLIENT_ID,
     CFTOOLS_WEBHOOK_CHANNEL_ID,
     CFTOOLS_WEBHOOK_USER_ID,
     CFTOOLS_DELETE_ORIGINAL_MESSAGE,
