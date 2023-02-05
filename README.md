@@ -2,6 +2,8 @@
 
 This is a NodeJS application that parses data from the free CFTools webhook and replaces it with a custom embed message with minimal dependencies. Fetches additional information from the CFTools API to try and resolve the latest in-game player name.
 
+![Discord_qPB9HlZ0MP](https://user-images.githubusercontent.com/57721238/216817102-bf49c64f-242a-4830-b076-1b38a4a1f234.png)
+
 ## Prerequisites
 
 - [Node.js](https://nodejs.org/en/download/)
