@@ -29,7 +29,7 @@
       "name": "Player Banned",
       "iconURL": "https://example.com/image.png"
     },
-    "description": "{{ign}} | {{cftoolsProfileLink}} | {{profileHyperLink}} | {{banListHyperLink}} | {{banListIdentifier}} | {{banListURL}} | {{reason}}",
+    "description": "{{ign}} | {{cftoolsProfileLink}} | {{profileHyperLink}} | {{banListIdentifier}} | {{reason}}",
     "fields": [
       {
         "name": "Profile",
@@ -38,7 +38,7 @@
       },
       {
         "name": "Ban Manager",
-        "value": "{{banListHyperLink}}"
+        "value": "{{banListIdentifier}}"
       },
       {
         "name": "Reason",

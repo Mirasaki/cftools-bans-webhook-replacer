@@ -74,9 +74,7 @@ This is a NodeJS application that parses data from the free CFTools webhook and 
   // {{ign}}                - Latest in game name for the banned player
   // {{cftoolsProfileLink}} - URL of the banned player's CFTools profile
   // {{profileHyperLink}}   - Pre-formatted Discord hyperlink of the player's CFTools profile
-  // {{banListHyperLink}}   - Pre-formatted Discord hyperlink, but it links to a ban-manager O;
   // {{banListIdentifier}}  - Id of the CFtools ban-manager
-  // {{banListURL}}         - URL to the CFTools ban-manager
   // {{reason}}             - The reason provided, [[DEV]]
 
   // Should we use the custom embed
@@ -88,7 +86,7 @@ This is a NodeJS application that parses data from the free CFTools webhook and 
       "name": "Player Banned",
       "iconURL": "https://example.com/image.png"
     },
-    "description": "{{ign}} | {{cftoolsProfileLink}} | {{profileHyperLink}} | {{banListHyperLink}} | {{banListIdentifier}} | {{banListURL}} | {{reason}}",
+    "description": "{{ign}} | {{cftoolsProfileLink}} | {{profileHyperLink}} | {{banListIdentifier}} | {{reason}}",
     "fields": [
       {
         "name": "Profile",
@@ -97,7 +95,7 @@ This is a NodeJS application that parses data from the free CFTools webhook and 
       },
       {
         "name": "Ban Manager",
-        "value": "{{banListHyperLink}}"
+        "value": "{{banListHyperIdentifier}}"
       },
       {
         "name": "Reason",
