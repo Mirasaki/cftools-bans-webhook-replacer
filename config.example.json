@@ -1,5 +1,4 @@
 {
-  "DISCORD_CLIENT_ID": "",
   "DISCORD_BOT_TOKEN": "",
 
   "CFTOOLS_API_APPLICATION_ID": "",
@@ -23,7 +22,7 @@
   "UNRESOLVED_PLAYER_NAME": "Survivor",
   "DEFAULT_BAN_REASON": "Not provided",
 
-  "_USE_CUSTOM_EMBED_STRUCTURE": true,
+  "_USE_CUSTOM_EMBED_STRUCTURE": false,
   "_CUSTOM_EMBED_STRUCTURE": {
     "color": 12526,
     "author": {

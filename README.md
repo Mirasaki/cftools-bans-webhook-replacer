@@ -33,7 +33,6 @@ This is a NodeJS application that parses data from the free CFTools webhook and 
 ```json
 {
   // Can be grabbed by creating a new application in [your Discord Developer Portal](https://discord.com/developers/applications)
-  "DISCORD_CLIENT_ID": "835856785512464436",
   // After creating your bot on the link above, navigate to `Bot` in the left-side menu to reveal your bot-token
   "DISCORD_BOT_TOKEN": "your_token",
 
