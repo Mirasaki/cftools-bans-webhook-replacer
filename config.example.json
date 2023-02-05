@@ -47,5 +47,5 @@
     ]
   },
 
-  "_CFTOOLS_WEBHOOK_REGEX_MATCH": "/(got banned on)|:/"
+  "_CFTOOLS_WEBHOOK_REGEX_MATCH": ""
 }
