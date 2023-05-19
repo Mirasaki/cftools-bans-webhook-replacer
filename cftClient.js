@@ -96,3 +96,24 @@ const tryPlayerName = async (cftoolsId) => {
   return resolvedName;
 };
 module.exports.tryPlayerName = tryPlayerName;
+
+const getBanListEntry = async (identifier, banListId) => {
+  let data;
+  try {
+    data = await fetch(
+      `https://data.cftools.cloud/v1/banlist/${ banListId }/bans?identifier=${ identifier }`,
+      {
+        method: 'GET',
+        headers: { Authorization: `Bearer ${ await getAPIToken() }` }
+      }
+    );
+    data = (await data.json());
+  }
+  catch (err) {
+    logger.syserr('Error encounter while getting ban entry');
+    logger.printErr(err);
+    data = null;
+  }
+  return data;
+};
+module.exports.getBanListEntry = getBanListEntry;

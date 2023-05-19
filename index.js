@@ -1,6 +1,6 @@
 // Import dependencies
 const { Client, GatewayIntentBits, Events } = require("discord.js");
-const { tryPlayerName } = require("./cftClient");
+const { tryPlayerName, getBanListEntry } = require("./cftClient");
 const { existsSync } = require('fs');
 
 // Make sure the configuration file exists
@@ -84,13 +84,35 @@ const main = async () => {
     if (color.length < 6) color = `${color}${color.charAt(0).repeat(6 - color.length)}`;
     color = parseInt(color, 16);
 
+    // Fetch cftools id bans from API
+    let expiresAt;
+    try {
+      const { status, entries } = await getBanListEntry(
+        cftoolsId,
+        banListIdentifier
+      );
+      if (status === true) {
+        const target = entries.find((e) => e.reason === reason);
+        if (target) {
+          const {expires_at} = target;
+          if (expires_at === 'null' || expires_at === null) expiresAt = 'Permanent'
+          else if (expires_at) expiresAt = `<t:${Math.round(new Date(expiresAt).valueOf())}:R>`
+        }
+      }
+    }
+    catch (err) {
+      console.error('Error encountered while fetching ban entry:')
+      console.error(err)
+    }
+
     // Structure available tags _CUSTOM_EMBED_STRUCTURE
     const availableTags = {
       ign,
       cftoolsProfileLink,
       profileHyperLink,
       banListIdentifier,
-      reason
+      reason,
+      expiresAt: expiresAt ?? null
     }
 
     // Construct our embed object
@@ -118,6 +140,17 @@ const main = async () => {
             }
           ]
         }
+
+    // Conditionally, add expires field
+    if (
+      !_USE_CUSTOM_EMBED_STRUCTURE
+      && expiresAt
+    ) {
+      banEmbed.fields.push({
+        name: 'Expires',
+        value: `${expiresAt}`
+      })
+    }
 
     // Wait for our message delivery
     await channel
