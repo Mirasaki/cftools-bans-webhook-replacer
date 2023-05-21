@@ -2,7 +2,7 @@
 
 ## Archived
 
-This repository has been archived. It will no longer receive any updates, bug-fixes, or feature implementations. The reason is that the [GameShield](https://mirasaki.dev/gameshield) is a better alternative to this project, and it has therefor been abandoned.
+This repository has been archived. It will no longer receive any updates, bug-fixes, or feature implementations. The reason is that [GameShield](https://mirasaki.dev/gameshield) is a better alternative to this project, and it has therefor been abandoned.
 
 ![GameShield Compact Ban Feed](./assets/gameshield_banfeed_compact.png)
 
