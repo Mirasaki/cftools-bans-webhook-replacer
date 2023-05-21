@@ -1,5 +1,15 @@
 # cftools-bans-webhook-replacer
 
+## Archived
+
+This repository has been archived. It will no longer receive any updates, bug-fixes, or feature implementations. The reason is that the [GameShield](https://mirasaki.dev/gameshield) is a better alternative to this project, and it has therefor been abandoned.
+
+![GameShield Compact Ban Feed](./assets/gameshield_banfeed_compact.png)
+
+![GameShield Detailed Ban Feed](./assets/gameshield_banfeed_detailed.png)
+
+## Overview
+
 This is a NodeJS application that parses data from the free CFTools webhook and replaces it with a custom embed message with minimal dependencies. Fetches additional information from the CFTools API to try and resolve the latest in-game player name.
 
 ![Discord_qPB9HlZ0MP](https://user-images.githubusercontent.com/57721238/216817102-bf49c64f-242a-4830-b076-1b38a4a1f234.png)
